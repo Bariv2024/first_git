@@ -1,6 +1,5 @@
 #!/bin/bash
 
-local choice=$1
 
 # Функция для поиска пользователя по имени
 check_user_name() {
