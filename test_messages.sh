@@ -12,9 +12,6 @@ if [ -z "$FILES" ]; then
   exit 1
 fi
 
-# Создать директорию для выходных файлов, если она не существует
-mkdir -p "$OUTPUT_PATH"
-
 # Извлечь нужные строки и записать их в выходной файл
 for FILE in $FILES; do
     grep -E 'SUCCESS LOGIN by' "$FILE" | while IFS= read -r LINE; do
