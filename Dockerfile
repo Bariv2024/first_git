@@ -1,11 +1,11 @@
-from ubuntu:latest
+FROM python:3.9-slim
 
-RUN apt-get -y update
-RUN apt-get -y install nginx
+WORKDIR /app
 
-RUN echo 'Hello Alex from Ivan' > /var/www/html/index.html
+COPY app.py app.py
 
-RUN rm /var/www/html/index.nginx-debian.html
+RUN pip install Flask==2.0.1 Werkzeug==2.0.1
 
-CMD ["nginx", "-g", "daemon off;"]
-EXPOSE 80
+EXPOSE 5000
+
+CMD ["python", "app.py"]
